@@ -7,11 +7,8 @@ class Search extends Component {
         onSearch: PropTypes.func.isRequired,
     }
 
-    constructor(props){
-        super(props);
-        this.state = {
-            query: null
-        }
+    state = {
+        query: null
     }
 
     handleInputChange = (event) => {
@@ -20,16 +17,16 @@ class Search extends Component {
         });
     }
 
-    handleClick = () => {
+    handleSearchClick = () => {
         const { query } = this.state; 
         const { onSearch } = this.props;
         onSearch(query);
     };
 
     render = () => (
-        <div className="search">
+        <div className="search-container">
             <input type="text" onChange={this.handleInputChange} placeholder="Movie name..."/>
-            <button onClick={this.handleClick}>SEARCH</button>
+            <button onClick={this.handleSearchClick}>SEARCH</button>
         </div>
     );
 };

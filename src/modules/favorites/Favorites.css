@@ -1,0 +1,12 @@
+.favorites-box{
+    height: 50px;
+    width: 200px;
+    border: 2px solid wheat;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.counter{
+    font-size: 20px;
+}
