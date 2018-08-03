@@ -20,7 +20,14 @@ class Home extends Component {
 
   handleSearchChange = (query) => {
     get({query})
-      .then(({ Search: movies }) => this.setState({ movies }));
+      .then(({ Search: movies }) => {
+        if(movies){
+          this.setState({ movies });
+        }
+        else{
+          this.setState({ movies:[] })
+        };
+      });
   }
 
   render = () => {

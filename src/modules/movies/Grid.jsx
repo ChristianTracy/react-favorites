@@ -6,15 +6,16 @@ const isMovieAdded = (movieID, favorites) => {
     return favorites.includes(movieID);
 };
 
+const renderMovies = (data, onFavoriteClick, favorites) => (data.map((element) => (
+    <Movie 
+        onFavoriteClick={onFavoriteClick}
+        key={element.imdbID}
+        data={element}
+        isAdded={isMovieAdded(element.imdbID, favorites)}/>)));
+
 const Grid = ({ data, onFavoriteClick, favorites }) => (
     <div className="grid">
-        {data.map((element) => (
-            <Movie 
-                onFavoriteClick={onFavoriteClick}
-                key={element.imdbID}
-                data={element}
-                isAdded={isMovieAdded(element.imdbID, favorites)}/>)
-        )}
+        {data.length > 0 ? renderMovies(data, onFavoriteClick, favorites) : "No movies here..."}
     </div>
 );
 

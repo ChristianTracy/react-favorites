@@ -8,15 +8,15 @@ class App extends Component {
     favorites: [],
   }
 
-  addFavoriteHandler = (favoriteID) => {
-    if(this.state.favorites.includes(favoriteID)){
+  addFavoriteHandler = (movieID) => {
+    if(this.state.favorites.includes(movieID)){
       this.setState((prevState) => ({
-        favorites: prevState.favorites.filter(element => element !== favoriteID)
+        favorites: prevState.favorites.filter(element => element !== movieID)
       }));
     }
     else{
       this.setState((prevState) => ({
-        favorites: [...prevState.favorites, favoriteID]
+        favorites: [...prevState.favorites, movieID]
       }));
     }
   }
