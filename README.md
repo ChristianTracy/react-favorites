@@ -22,3 +22,27 @@ REACT_APP_SERVER_URL=http://www.omdbapi.com
 ```
 npm start
 ```
+
+## /LOGIN 
+
+After run `npm start` a server in the port 3001 should be available.
+To use this mock login response make a `POST` method to `/login`.
+
+
+### POST /login
+``` 
+{
+	"username": "myuser@gmail.com",
+	"password": "mypassword"
+}
+```
+
+### RESPONSE
+```
+{
+    "username": "myuser@gmail.com",
+    "name": "Name",
+    "lastname": "LastName",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+}
+```
