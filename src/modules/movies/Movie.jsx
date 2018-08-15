@@ -9,7 +9,7 @@ const Movie = ({ data, onFavoriteClick, isAdded }) => (
         <div className="description">
             <span className="title">{`${data.Title} - ${data.Year}`}</span>
         </div>
-        <button onClick={() => onFavoriteClick(data.imdbID)}>
+        <button onClick={() => onFavoriteClick(data)}>
             { isAdded ? emojify(':heart:') : emojify(':black_heart:') }
         </button>
     </div>

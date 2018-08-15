@@ -10,7 +10,7 @@ class Home extends Component {
 
   static propTypes = {
     onFavoriteClick: PropTypes.func.isRequired,
-    favorites: PropTypes.arrayOf(PropTypes.string).isRequired,
+    favorites: PropTypes.arrayOf(PropTypes.object).isRequired,
   }
 
   state = {

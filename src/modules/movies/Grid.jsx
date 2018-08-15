@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Movie from './Movie';
 
 const isMovieAdded = (movieID, favorites) => {
-    return favorites.includes(movieID);
+    return !!favorites.find((favorite) => favorite.imdbID === movieID);
 };
 
 const renderMovies = (data, onFavoriteClick, favorites) => (data.map((element) => (
@@ -23,7 +23,7 @@ const Grid = ({ data, onFavoriteClick, favorites }) => (
 Grid.propTypes = {
     data: PropTypes.arrayOf(PropTypes.object).isRequired,
     onFavoriteClick: PropTypes.func.isRequired,
-    favorites: PropTypes.arrayOf(PropTypes.string).isRequired,
+    favorites: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default Grid;
